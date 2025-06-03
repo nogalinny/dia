@@ -1,0 +1,150 @@
+body {
+  background-color: #ffffff; /* fundo branco puro */
+  font-family: 'Georgia', serif;
+  text-align: center;
+  padding: 50px;
+  color: #4a2c2a;
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Microsoft JhengHei', sans-serif;
+  font-weight: normal;
+  font-size: 36px; /* tamanho menor */
+  color: #333333; /* cor neutra escura */
+  margin-bottom: 20px;
+}
+
+#envelope {
+  font-size: 40px; /* menor que antes */
+  cursor: pointer;
+  margin: 40px auto;
+  user-select: none;
+  transition: transform 0.3s;
+  color: #777777; /* cor suave para ficar minimalista */
+  /* trocar emoji pelo símbolo de envelope simples, aqui pode ser um ícone Unicode */
+}
+
+#envelope:hover {
+  transform: scale(1.1);
+  color: #d6336c; /* cor rosa só no hover */
+}
+
+p {
+  max-width: 600px;
+  margin: 10px auto;
+  line-height: 1.6;
+  text-align: center;
+  font-size: 16px;
+  color: #555555;
+}
+
+/* carta e carrossel podem ter menos bordas e sombra */
+
+#carta {
+  max-width: 600px;
+  background: #fafafa; /* leve cinza clarinho */
+  border: 1px solid #ddd;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: none;
+  font-size: 16px;
+  text-align: justify;
+  color: #444444;
+}
+
+#carta p {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+
+#carta p.assinatura {
+  text-align: right;
+  font-style: italic;
+  margin-top: 30px;
+  color: #666666;
+  width: 100%;
+  display: block;
+}
+
+
+button#fechar,
+button#voltar {
+  margin-top: 20px;
+  background-color: transparent;
+  color: #d6336c;
+  border: 1px solid #d6336c;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button#fechar:hover,
+button#voltar:hover {
+  background-color: #d6336c;
+  color: white;
+}
+
+#musica-container {
+  margin-top: 10px;
+  font-weight: normal;
+  color: #888888;
+  font-size: 14px;
+}
+
+#carrossel img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+#carrossel button {
+  margin: 10px 5px;
+  font-size: 16px;
+  background-color: transparent;
+  color: #d6336c;
+  border: 1px solid #d6336c;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: normal;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#carrossel button:hover {
+  background-color: #d6336c;
+  color: white;
+}
+
+/* corações: deixei sutil, menor e com opacidade menor */
+.heart {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center;
+  background-size: contain;
+  animation: floatUp 4s linear forwards;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.5;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-800px) scale(1.3);
+    opacity: 0;
+  }
+}
+.hidden {
+  display: none;
+}
