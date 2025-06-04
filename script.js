@@ -8,6 +8,7 @@ const foto = document.getElementById("foto");
 const anterior = document.getElementById("anterior");
 const proximo = document.getElementById("proximo");
 const voltar = document.getElementById("voltar");
+const iconeMusica = document.getElementById("icone-musica");
 
 const fotos = [
   "foto1.jpg", "foto2.jpg", "foto3.jpg", "foto4.jpg", "foto5.JPG", "foto6.jpg",
@@ -52,6 +53,18 @@ voltar.addEventListener("click", () => {
   envelope.classList.remove("hidden");
   indice = 0;
   voltar.classList.add("hidden");
+  musica.pause();
+  musica.currentTime = 0;
+});
+
+iconeMusica.addEventListener("click", () => {
+  if (musica.paused) {
+    musica.play();
+    musicaContainer.textContent = "🎵 Tocando...";
+  } else {
+    musica.pause();
+    musicaContainer.textContent = "⏸️ Pausado";
+  }
 });
 
 function criarCoracao() {
@@ -67,56 +80,24 @@ function criarCoracao() {
   }, 4000);
 }
 
-// Cria corações a cada 800ms, até no máximo 5 por vez para manter leve
 setInterval(() => {
   if (document.querySelectorAll(".heart").length < 5) {
     criarCoracao();
   }
 }, 800);
 
-
 window.addEventListener("load", () => {
-  const musica = document.getElementById("musica");
-
   musica.play().catch(() => {
     document.addEventListener("click", () => {
       musica.play();
     }, { once: true });
   });
 });
-function voltarParaInicio() {
-  carrossel.classList.add("hidden");
-  carta.classList.add("hidden");
-  musicaContainer.classList.add("hidden");
-  envelope.classList.remove("hidden");
-  indice = 0;
-  foto.src = fotos[indice];
-  musica.pause();
-  musica.currentTime = 0;
-}
 
-const iconeMusica = document.getElementById("icone-musica");
-
-iconeMusica.addEventListener("click", () => {
-  if (musica.paused) {
-    musica.play();
-    musicaContainer.textContent = "🎵 Tocando...";
-  } else {
-    musica.pause();
-    musicaContainer.textContent = "⏸️ Pausado";
-  }
-});
-
-const audio = new Audio("musica.mp3");
-audio.loop = true;
-audio.volume = 0.5;
-audio.play();
-
-document.addEventListener("visibilitychange", function () {
+document.addEventListener("visibilitychange", () => {
   if (document.hidden) {
-    audio.pause();
+    musica.pause();
   } else {
-    audio.play();
+    musica.play();
   }
 });
-
