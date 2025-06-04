@@ -10,7 +10,7 @@ const proximo = document.getElementById("proximo");
 const voltar = document.getElementById("voltar");
 
 const fotos = [
-  "foto1.jpeg", "foto2.jpeg", "foto3.jpeg", "foto4.jpg", "foto5.jpg", "foto6.jpg",
+  "foto1.jpg", "foto2.jpg", "foto3.jpg", "foto4.jpg", "foto5.jpg", "foto6.jpg",
   "foto7.jpg", "foto8.jpg", "foto9.jpg", "foto10.jpg", "foto11.jpg", "foto12.jpg"
 ];
 let indice = 0;
