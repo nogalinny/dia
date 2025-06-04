@@ -94,3 +94,29 @@ function voltarParaInicio() {
   musica.pause();
   musica.currentTime = 0;
 }
+
+const iconeMusica = document.getElementById("icone-musica");
+
+iconeMusica.addEventListener("click", () => {
+  if (musica.paused) {
+    musica.play();
+    musicaContainer.textContent = "🎵 Tocando...";
+  } else {
+    musica.pause();
+    musicaContainer.textContent = "⏸️ Pausado";
+  }
+});
+
+const audio = new Audio("musica.mp3");
+audio.loop = true;
+audio.volume = 0.5;
+audio.play();
+
+document.addEventListener("visibilitychange", function () {
+  if (document.hidden) {
+    audio.pause();
+  } else {
+    audio.play();
+  }
+});
+
