@@ -1,143 +1,314 @@
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 body {
-  background-color: #ffffff;
-  font-family: 'Georgia', serif;
+  background-color: #0a0a0a;
+  font-family: 'Segoe UI', sans-serif;
   text-align: center;
   padding: 50px;
-  color: #4a2c2a;
+  color: #ffccd5;
   margin: 0;
 }
-
 h1 {
-  font-family: 'Microsoft JhengHei', sans-serif;
+  font-family: 'Dancing Script', cursive;
   font-weight: normal;
   font-size: 36px;
-  color: #333333;
+  color: #ffccd5;
   margin-bottom: 20px;
-}
+} 
 
-#envelope {
-  font-size: 40px;
+  #titulo-substituto h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 48px;
+    color: #ffccd5;
+    margin-top: 0;
+  }
+
+  p {
+    max-width: 600px;
+    margin: 10px auto;
+    line-height: 1.7;
+    font-size: 16px;
+    color: #ffccd5;
+  }
+
+  #envelope {
+    font-size: 40px;
+    cursor: pointer;
+    margin: 40px auto;
+    user-select: none;
+    transition: transform 0.3s;
+    color: #d6336c; 
+  }
+
+  #envelope:hover {
+    transform: scale(1.2);
+    color: #d6336c;
+  }
+
+  #musica-container {
+    margin-top: 10px;
+    color: #ff9aa2;
+    font-size: 16px;
+  }
+
+  #player-spotify {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    color: #1DB954; /* verde Spotify */
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+#btn-play-pause {
+  background: none;
+  border: none;
   cursor: pointer;
-  margin: 40px auto;
-  user-select: none;
+  padding: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.3s;
-  color: #777777;
 }
 
-#envelope:hover {
+#btn-play-pause svg {
+  stroke: #ffffffcc; /* branco delicado */
+  transition: stroke 0.3s, transform 0.3s;
+}
+
+#btn-play-pause:hover svg {
+  stroke: #ffccd5; /* rosado suave ao hover */
   transform: scale(1.1);
-  color: #d6336c;
 }
 
-p {
-  max-width: 600px;
-  margin: 10px auto;
-  line-height: 1.6;
-  font-size: 16px;
-  color: #555555;
-}
 
-#carta {
-  max-width: 600px;
-  background: #fafafa;
-  border: 1px solid #ddd;
-  margin: 30px auto;
-  padding: 25px;
-  border-radius: 8px;
-  font-size: 16px;
-  text-align: justify;
-  color: #444444;
-}
-
-#carta p {
-  text-align: justify;
-  line-height: 1.6;
-}
-
-#carta p.assinatura {
-  text-align: right;
-  font-style: italic;
-  margin-top: 30px;
-  color: #666666;
-}
-
-button#fechar,
-button#voltar,
-#carrossel button {
-  margin-top: 20px;
-  background-color: transparent;
-  color: #d6336c;
-  border: 1px solid #d6336c;
-  padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: normal;
-  font-size: 14px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-button#fechar:hover,
-button#voltar:hover,
-#carrossel button:hover {
-  background-color: #d6336c;
-  color: white;
-}
-
-#musica-container {
-  margin-top: 10px;
-  font-weight: normal;
-  color: #888888;
-  font-size: 14px;
-}
-
-#carrossel {
-  margin-top: 30px;
-}
-
-#carrossel img {
-  max-width: 90%;
-  height: auto;
-  border-radius: 8px;
-}
-
-#icone-musica {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-size: 24px;
-  cursor: pointer;
-  user-select: none;
-  color: #d6336c;
-  z-index: 999;
-}
-
-.hidden {
-  display: none;
-}
-
-/* Animação dos corações */
-.heart {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  background-color: transparent;
-  color: #ff69b4;
+  #nome-musica {
+  font-family: 'Dancing Script', cursive;
   font-size: 20px;
-  animation: subir 4s linear forwards;
+  color: #ffccd5;
+  margin-left: 8px;
+}
+
+  #carrossel {
+    margin-top: 30px;
+  }
+
+  #carrossel img {
+    max-width: 90%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #ff4d6d;
+  }
+
+  #carta {
+    max-width: 700px;
+    background: #1a1a1a;
+    border: 1px solid #ff4d6d;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px;
+    font-size: 16px;
+    text-align: justify;
+    color: #ffe6e9;
+  }
+
+  #carta p {
+    text-align: justify;
+    color: #ffe6e9;
+    margin-top: 15px;
+  }
+
+  #carta p.assinatura {
+    text-align: right;
+    font-style: italic;
+    color: #ffc9d1;
+    margin-top: 30px;
+  }
+
+  button#fechar,
+  button#voltar,
+  #carrossel button {
+    margin-top: 20px;
+    background-color: transparent;
+    color: #ff4d6d;
+    border: 1px solid #ff4d6d;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s;
+  }
+
+  button#fechar:hover,
+  button#voltar:hover,
+  #carrossel button:hover {
+    background-color: #ff4d6d;
+    color: black;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /* Animação dos corações */
+  .heart {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    color: #ff4d6d;
+    font-size: 20px;
+    animation: subir 4s linear forwards;
+    pointer-events: none;
+  }
+
+  .heart::before {
+    content: "❤️";
+  }
+
+  @keyframes subir {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+  }
+
+button,
+#voltar-inicio {
+  background-color: transparent;
+  color: #ff4d6d;
+  border: 1px solid #ff4d6d;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+button:hover,
+#voltar-inicio:hover {
+  background-color: #ff4d6d;
+  color: black;
+}
+
+#versiculo {
+  max-width: 700px;
+  margin: 30px auto;
+  background-color: transparent;
+  padding: 20px; /* aumentamos o padding horizontal */
+  border-radius: 10px;
+  color: #ffe6e9;
+  font-size: 20px;
+  line-height: 1.8;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box; /* garante que padding não ultrapasse max-width */
+}
+
+#versiculo p {
+  margin: 12px 0;
+}
+
+#versiculo .versiculo-referencia {
+  font-style: italic;
+  color: #ff9aa2;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+#compartilhando {
+  margin: 20px auto;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  color: #ffccd5;
+}
+
+.texto-compartilhando {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.data-compartilhamento {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  color: #ffccd5;
+}
+
+.data-compartilhamento svg {
+  stroke: #ff4d6d;
+}
+
+.data-texto {
+  font-weight: bold;
+  font-size: 18px;
+}
+#foto-versiculo {
+  margin: 30px auto 20px;
+  text-align: center;
+}
+
+#foto-versiculo img {
+  max-width: 200px; /* ou ajuste como preferir, por ex: 150px, 100px */
+  width: 100%;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid #ff4d6d;
+}
+.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease;
   pointer-events: none;
 }
 
-.heart::before {
-  content: "❤️";
+.hidden:not(.hidden) {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-@keyframes subir {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100vh);
-    opacity: 0;
-  }
+h1, #titulo-substituto h1, #nome-musica {
+  text-shadow: 0 0 6px #ff4d6d, 0 0 10px #ff4d6d;
+}
+
+p, #carta p, #versiculo p {
+  text-shadow: 0 0 3px #ffccd5;
+}
+
+button, #voltar-inicio, button#fechar, button#voltar, #carrossel button {
+  box-shadow: 0 0 8px #ff4d6d88;
+  transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;
+}
+
+button:hover, #voltar-inicio:hover, button#fechar:hover, button#voltar:hover, #carrossel button:hover {
+  box-shadow: 0 0 15px #ff4d6dcc;
+  background-color: #ff4d6d;
+  color: black;
+}
+
+#envelope {
+  filter: drop-shadow(0 0 5px #d6336caa);
+  transition: filter 0.3s, transform 0.3s;
+}
+
+#envelope:hover {
+  filter: drop-shadow(0 0 12px #d6336cdd);
+  transform: scale(1.2);
+}
+
+.heart {
+  text-shadow: 0 0 8px #ff4d6d;
 }
