@@ -312,3 +312,15 @@ button:hover, #voltar-inicio:hover, button#fechar:hover, button#voltar:hover, #c
 .heart {
   text-shadow: 0 0 8px #ff4d6d;
 }
+@media (max-width: 600px) {
+  body {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  p, #carta, #versiculo {
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 100%;
+  }
+}
