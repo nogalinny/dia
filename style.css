@@ -284,10 +284,6 @@ h1, #titulo-substituto h1, #nome-musica {
   text-shadow: 0 0 6px #ff4d6d, 0 0 10px #ff4d6d;
 }
 
-p, #carta p, #versiculo p {
-  text-shadow: 0 0 3px #ffccd5;
-}
-
 button, #voltar-inicio, button#fechar, button#voltar, #carrossel button {
   box-shadow: 0 0 8px #ff4d6d88;
   transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;
